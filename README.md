@@ -58,16 +58,12 @@ Bu proje, **ASP.NET Core MVC** ve **Entity Framework Core Code First** kullanıl
 
 ## 🖼️ Ekran Görüntüleri
 
-> Görselleri proje klasöründe `/screenshots` altında saklayabilir ve buradaki bağlantılarla ilişkilendirebilirsiniz.
 
-### Anasayfa  
-![Anasayfa](screenshots/homepage.png)
 
-### Admin Paneli  
-![Admin Paneli](screenshots/admin-panel.png)
 
-### Abonelik Bildirimi  
-![Abonelik](screenshots/subscription.png)
+
+![]([screenshots/homepage.png](https://github.com/eniscode/AcunMedyaTravelProject/blob/master/AcunMedyaTravelProject/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-05-10%20180323.png))
+
 
 ---
 
