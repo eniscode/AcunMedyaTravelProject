@@ -1,0 +1,28 @@
+﻿@model AcunMedyaTravelProject.Entities.SocialMedia
+
+@{
+    ViewData["Title"] = "Yeni Sosyal Medya Ekle";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h1>Yeni Sosyal Medya Ekle</h1>
+
+<form asp-action="Create" asp-controller="SocialMedia" asp-area="Admin" method="post">
+    <div class="form-group">
+        <label for="Icon">İkon</label>
+        <input type="text" asp-for="Icon" class="form-control" required />
+        <span asp-validation-for="Icon" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="Url">URL</label>
+        <input type="text" asp-for="Url" class="form-control" required />
+        <span asp-validation-for="Url" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="GuideId">Rehber</label>
+        <select asp-for="GuideId" class="form-control" asp-items="ViewBag.Guides"></select>
+        <span asp-validation-for="GuideId" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Ekle</button>
+    <a href="/Admin/SocialMedia/Index" class="btn btn-secondary">Geri Dön</a>
+</form>

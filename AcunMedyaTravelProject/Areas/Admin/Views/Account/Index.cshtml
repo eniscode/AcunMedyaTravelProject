@@ -1,0 +1,33 @@
+﻿@model List<Admin>
+
+@{
+    ViewData["Title"] = "Kullanıcı Listesi";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h1 class="mb-4">Kullanıcı Listesi</h1>
+
+<div class="row">
+    @foreach (var admin in Model)
+    {
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Kullanıcı: @admin.UserName</h5>
+                    <p class="card-text"><strong>Id:</strong> @admin.Id</p>
+                    <p class="card-text"><strong>Şifre:</strong> @admin.Password</p>
+                    <div class="d-flex justify-content-between">
+                        <a class="btn btn-primary btn-sm" href="/Admin/Account/Edit/@admin.Id">Düzenle</a>
+                        <form method="post" action="/Admin/Account/Delete" style="display:inline;">
+                            <input type="hidden" name="id" value="@admin.Id" />
+                            <button type="submit" class="btn btn-danger btn-sm">Sil</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<a class="btn btn-success" href="/Admin/Account/Create">Yeni Kullanıcı Ekle</a>
+

@@ -1,0 +1,28 @@
+﻿@model AcunMedyaTravelProject.Entities.About
+
+@{
+    ViewData["Title"] = "Yeni Hakkımızda Bilgisi Ekle";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h1 class="mb-4">Yeni Hakkımızda Bilgisi Ekle</h1>
+
+<form asp-action="Create" asp-controller="About" asp-area="Admin" method="post">
+    <div class="form-group mb-3">
+        <label for="Name" class="form-label">Başlık</label>
+        <input type="text" asp-for="Name" class="form-control" required />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label for="Description" class="form-label">Açıklama</label>
+        <textarea asp-for="Description" class="form-control" rows="4" required></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label for="ImageUrl" class="form-label">Resim URL</label>
+        <input type="text" asp-for="ImageUrl" class="form-control" required />
+        <span asp-validation-for="ImageUrl" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Ekle</button>
+    <a href="/Admin/About/Index" class="btn btn-secondary">Geri Dön</a>
+</form>

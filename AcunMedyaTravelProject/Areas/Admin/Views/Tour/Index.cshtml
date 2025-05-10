@@ -1,0 +1,43 @@
+﻿@model List<AcunMedyaTravelProject.Entities.Tour>
+
+@{
+    ViewData["Title"] = "Tur Listesi";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h1 class="mb-4">Tur Listesi</h1>
+
+<div class="mb-3">
+    <a class="btn btn-outline-primary" href="/Admin/Tour/Index">Tüm Turlar</a>
+    <a class="btn btn-outline-success" href="/Admin/Tour/NationalTours">Ulusal Turlar</a>
+    <a class="btn btn-outline-info" href="/Admin/Tour/InternationalTours">Uluslararası Turlar</a>
+</div>
+
+<div class="row">
+    @foreach (var tour in Model)
+    {
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Tur: @tour.Title</h5>
+                    <p class="card-text">
+                        <strong>Kapak Görseli:</strong>
+                        <img src="@tour.ImageUrl" alt="@tour.Title" style="width: 100%; height: auto;" />
+                    </p>
+                    <p><strong>Kategori:</strong> @tour.TourCategory</p>
+                    <p><strong>Şehir Sayısı:</strong> @tour.CityCount</p>
+                    <p><strong>Tur Yeri Sayısı:</strong> @tour.TourPlaceCount</p>
+                    <div class="d-flex justify-content-between">
+                        <a class="btn btn-primary btn-sm" href="/Admin/Tour/Edit/@tour.Id">Düzenle</a>
+                        <form method="post" action="/Admin/Tour/Delete" style="display:inline;">
+                            <input type="hidden" name="id" value="@tour.Id" />
+                            <button type="submit" class="btn btn-danger btn-sm">Sil</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<a class="btn btn-success" href="/Admin/Tour/Create">Yeni Tur Ekle</a>

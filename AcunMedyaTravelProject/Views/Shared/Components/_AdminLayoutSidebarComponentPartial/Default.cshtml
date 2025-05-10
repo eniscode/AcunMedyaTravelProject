@@ -1,0 +1,124 @@
+﻿<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="nav flex-column" style="gap: 1rem;">
+        <!-- Öğeler arasında boşluk -->
+        <li class="nav-item mt-3">
+            <a class="nav-link fs-6" href="/Admin/Dashboard/Index">
+                <!-- Yazı boyutunu küçülttüm -->
+                <i class="mdi mdi-grid-large menu-icon" style="font-size: 1.5rem;"></i> <!-- İkon boyutunu küçülttüm -->
+                <span class="menu-title" style="font-size: 1rem;">Kontrol Paneli</span>
+            </a>
+        </li>
+        <li class="nav-item nav-category mt-3 fs-6">Yönetim</li>
+        <li class="nav-item mt-3">
+            <a class="nav-link fs-6" data-bs-toggle="collapse" href="/Admin/Guide/Index" aria-expanded="false" aria-controls="guides">
+                <i class="menu-icon mdi mdi-account-multiple" style="font-size: 1.5rem;"></i>
+                <span class="menu-title" style="font-size: 1rem;">Rehberler</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="guides">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="/Admin/Guide/Index">Rehber Listesi</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="/Admin/Guide/Create">Yeni Rehber Ekle</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item mt-3">
+            <a class="nav-link fs-6" href="/Admin/Account/Index">
+                <i class="menu-icon mdi mdi-account-circle-outline" style="font-size: 1.5rem;"></i>
+                <span class="menu-title" style="font-size: 1rem;">Kullanıcı Sayfası</span>
+            </a>
+        </li>
+
+        <li class="nav-item mt-3">
+            <a class="nav-link fs-6 " data-bs-toggle="collapse" href="/Admin/Tour/Index" aria-expanded="false" aria-controls="tours">
+                <i class="menu-icon mdi mdi-map" style="font-size: 1.5rem;"></i>
+                <span class="menu-title" style="font-size: 1rem;">Turlar</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="tours">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="/Admin/Tour/Index">Tur Listesi</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="/Admin/Tour/Create">Yeni Tur Ekle</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item mt-3">
+            <a class="nav-link fs-6" data-bs-toggle="collapse" href="/Admin/Destination/Index" aria-expanded="false" aria-controls="cities">
+                <i class="menu-icon mdi mdi-city" style="font-size: 1.5rem;"></i>
+                <span class="menu-title" style="font-size: 1rem;">Şehirler</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="cities">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="/Admin/City/Index">Şehir Listesi</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="/Admin/City/Create">Yeni Şehir Ekle</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item mt-3">
+            <a class="nav-link fs-6" data-bs-toggle="collapse" href="/Admin/Country/Index" aria-expanded="false" aria-controls="countries">
+                <i class="menu-icon mdi mdi-earth" style="font-size: 1.5rem;"></i>
+                <span class="menu-title" style="font-size: 1rem;">Ülkeler</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="countries">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="/Admin/Country/Index">Ülke Listesi</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="/Admin/Country/Create">Yeni Ülke Ekle</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item mt-3">
+            <a class="nav-link fs-6" data-bs-toggle="collapse" href="/Admin/Gallery/Index" aria-expanded="false" aria-controls="gallery">
+                <i class="menu-icon mdi mdi-image" style="font-size: 1.5rem;"></i>
+                <span class="menu-title" style="font-size: 1rem;">Galeri</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="gallery">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="/Admin/Gallery/Index">Galeri Listesi</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="/Admin/Gallery/Create">Yeni Görsel Ekle</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item mt-3">
+            <a class="nav-link fs-6" data-bs-toggle="collapse" href="/Admin/Social/Index" aria-expanded="false" aria-controls="social">
+                <i class="menu-icon mdi mdi-share-variant" style="font-size: 1.5rem;"></i>
+                <span class="menu-title" style="font-size: 1rem;">Sosyal Medya</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="social">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="/Admin/Social/Index">Sosyal Medya Listesi</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="/Admin/Social/Create">Yeni Sosyal Medya Ekle</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item mt-3">
+            <a class="nav-link fs-6" href="/Admin/Testimonial/Index">
+                <i class="menu-icon mdi mdi-comment-multiple-outline" style="font-size: 1.5rem;"></i>
+                <span class="menu-title" style="font-size: 1rem;">Yorumlar</span>
+            </a>
+        </li>
+       
+
+        <li class="nav-item mt-3">
+            <a class="nav-link fs-6" href="/Default/Index" target="_blank">
+                <!-- Ana siteye yönlendirme -->
+                <i class="menu-icon mdi mdi-web" style="font-size: 1.5rem;"></i>
+                <span class="menu-title" style="font-size: 1rem;">Siteye Git</span>
+            </a>
+        </li>
+        <li class="nav-item mt-3">
+            <!-- Tanıtım Alanı -->
+            <div class="card shadow-sm" style="background-color: #f8f9fa; border-radius: 10px; padding: 1rem;">
+                <h5 class="card-title" style="color: #6a11cb;">Tanıtım Alanı</h5>
+                <p class="card-text" style="font-size: 0.9rem; color: #333;">
+                    Yeni özelliklerimizi keşfedin ve daha fazlasını öğrenin!
+                </p>
+                <a href="/Admin/About/Index" class="btn btn-primary btn-sm" style="background-color: #6a11cb; border: none;">Daha Fazla</a>
+            </div>
+        </li>
+    </ul>
+
+</nav>

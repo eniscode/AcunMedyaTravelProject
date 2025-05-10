@@ -1,0 +1,44 @@
+﻿@model AcunMedyaTravelProject.Entities.Tour
+
+@{
+    ViewData["Title"] = "Turu Düzenle";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h1>Turu Düzenle</h1>
+
+<form asp-action="Edit" asp-controller="Tour" asp-area="Admin" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label for="Title">Tur Başlığı</label>
+        <input type="text" asp-for="Title" class="form-control" required />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="ImageUrl">Kapak Görseli URL</label>
+        <input type="text" asp-for="ImageUrl" class="form-control" required />
+        <span asp-validation-for="ImageUrl" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="Discount">İndirim (%)</label>
+        <input type="number" asp-for="Discount" class="form-control" />
+        <span asp-validation-for="Discount" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="TourCategory">Tur Kategorisi</label>
+        <select asp-for="TourCategory" class="form-control" asp-items="@(new SelectList(ViewBag.TourCategories))"></select>
+        <span asp-validation-for="TourCategory" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="CityCount">Şehir Sayısı</label>
+        <input type="number" asp-for="CityCount" class="form-control" />
+        <span asp-validation-for="CityCount" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="TourPlaceCount">Tur Yeri Sayısı</label>
+        <input type="number" asp-for="TourPlaceCount" class="form-control" />
+        <span asp-validation-for="TourPlaceCount" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+    <a href="/Admin/Tour/Index" class="btn btn-secondary">Geri Dön</a>
+</form>

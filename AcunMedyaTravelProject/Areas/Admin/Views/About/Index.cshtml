@@ -1,0 +1,48 @@
+﻿@model List<AcunMedyaTravelProject.Entities.About>
+
+@{
+    ViewData["Title"] = "Hakkımızda";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h1 class="mb-4 text-center">Hakkımızda</h1>
+
+<style>
+    .custom-container {
+        min-height: 140vh; /* Yüksekliği artırın */
+    }
+    .card {
+        max-width: 600px; /* Kart genişliğini artırın */
+    }
+</style>
+
+<div class="container custom-container d-flex flex-wrap">
+    <div class="row justify-content-start">
+        @foreach (var about in Model)
+        {
+            <div class="col-md-6 col-lg-4 mb-4 d-flex">
+                <div class="card shadow-sm" style="width: 100%; min-height: 550px;">
+                    <img src="@about.ImageUrl" class="card-img-top" alt="@about.Name" style="height: 300px; object-fit: cover;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">@about.Name</h5>
+                        <p class="card-text">@about.Description</p>
+                        <div class="d-flex justify-content-between">
+                            <a href="/Admin/About/Edit/@about.Id" class="btn btn-primary btn-sm">Düzenle</a>
+                            <form method="post" action="/Admin/About/Delete" style="display:inline;">
+                                <input type="hidden" name="id" value="@about.Id" />
+                                <button type="submit" class="btn btn-danger btn-sm">Sil</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+<a href="/Admin/About/Create" class="btn btn-success mt-4 d-block mx-auto" style="max-width: 200px;">Yeni Hakkımızda Bilgisi Ekle</a>
+
+
+
+

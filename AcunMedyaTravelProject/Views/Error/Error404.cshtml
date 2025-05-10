@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Error";
+    Layout = null;
+}
+
+<style>
+    body {
+        background-image: url('https://cdn.wallpapersafari.com/1/72/xBKoj4.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        font-family: Arial, sans-serif;
+    }
+
+    .error-container {
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+        .error-container h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .error-container .error-code {
+            font-size: 6rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .error-container p {
+            font-size: 1.2rem;
+        }
+</style>
+
+<div class="error-container">
+    <div class="error-code">404</div>
+    <h1>Bir Hata Oluştu</h1>
+    <p>Üzgünüz, bir hata meydana geldi. Lütfen daha sonra tekrar deneyin.</p>
+</div>

@@ -1,0 +1,28 @@
+﻿@model AcunMedyaTravelProject.Entities.Destination
+
+@{
+    ViewData["Title"] = "Yeni Destinasyon Ekle";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h1>Yeni Destinasyon Ekle</h1>
+
+<form asp-action="Create" asp-controller="Destination" asp-area="Admin" method="post">
+    <div class="form-group">
+        <label for="CityName">Şehir Adı</label>
+        <input type="text" asp-for="CityName" class="form-control" required />
+        <span asp-validation-for="CityName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="CoverImageUrl">Kapak Görseli URL</label>
+        <input type="text" asp-for="CoverImageUrl" class="form-control" required />
+        <span asp-validation-for="CoverImageUrl" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="CountryId">Ülke</label>
+        <select asp-for="CountryId" class="form-control" asp-items="ViewBag.Countries"></select>
+        <span asp-validation-for="CountryId" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Ekle</button>
+    <a href="/Admin/Destination/Index" class="btn btn-secondary">Geri Dön</a>
+</form>

@@ -1,0 +1,38 @@
+﻿@model List<AcunMedyaTravelProject.Entities.Testimonial>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+<div class="container mt-5">
+    <h2>Yorumlar</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>İsim</th>
+                <th>Yıldız</th>
+                <th>Açıklama</th>
+                <th>Fotoğraf</th>
+                <th>Şehir</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var testimonial in Model)
+            {
+                <tr>
+                    <td>@testimonial.Id</td>
+                    <td>@testimonial.Name</td>
+                    <td>@testimonial.Rate</td>
+                    <td>@testimonial.Content</td>
+                    <td>
+                        <img src="@testimonial.ImageUrl" alt="@testimonial.Name" style="width: 100px; height: 100px; object-fit: cover;" />
+                    </td>
+                    <td>@testimonial.Nation</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

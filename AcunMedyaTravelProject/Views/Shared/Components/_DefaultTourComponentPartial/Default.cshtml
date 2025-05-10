@@ -1,0 +1,78 @@
+﻿@model TourViewModel
+<div class="container-fluid ExploreTour py-5">
+    <div class="container py-5">
+        <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+            <h5 class="section-title px-3">Turları Keşfet</h5>
+            <h1 class="mb-4">Ulusal ve Uluslararası Turlarımıza Göz Atın.</h1>
+        </div>
+        <div class="tab-class text-center">
+            <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
+                <li class="nav-item">
+                    <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill active" data-bs-toggle="pill" href="#NationalTab-1">
+                        <span class="text-dark" style="width: 250px;">Ulusal Turlar</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="d-flex py-2 mx-3 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#InternationalTab-2">
+                        <span class="text-dark" style="width: 250px;">Uluslararası Turlar</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div id="NationalTab-1" class="tab-pane fade show p-0 active">
+                    <div class="row g-4">
+                        @foreach (var item in Model.Tours)
+                        {
+                            <div class="col-md-6 col-lg-4">
+                                <div class="national-item">
+                                    <img src="@item.ImageUrl" class="img-fluid w-100 rounded" alt="Image">
+                                    <div class="national-content">
+                                        <div class="national-info">
+                                            <h5 class="text-white text-uppercase mb-2">@item.Title</h5>
+                                            <a href="#" class="btn-hover text-white">Tüm yerleri göster <i class="fa fa-arrow-right ms-2"></i></a>
+                                        </div>
+                                    </div>
+                                    @if (item.Discount != null)
+                                    {
+                                        <div class="tour-offer bg-info">%@item.Discount İndirim</div>
+                                    }
+                                    <div class="national-plus-icon">
+                                        <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div id="InternationalTab-2" class="tab-pane fade show p-0">
+                    <div class="InternationalTour-carousel owl-carousel">
+                        @foreach (var item in Model.Countries)
+                        {
+                            <div class="international-item">
+                                <img src="@item.ImageUrl" class="img-fluid w-100 rounded" alt="Image">
+                                <div class="international-content">
+                                    <div class="international-info">
+                                        <h5 class="text-white text-uppercase mb-2">@item.Name</h5>
+                                        <a href="#" class="btn-hover text-white me-4"><i class="fas fa-map-marker-alt me-1"></i> @item.Destinations.Count() şehir</a>
+                                    </div>
+                                </div>
+                                <div class="international-plus-icon">
+                                    <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .national-item img, .international-item img {
+        width: 100%;
+        height: 200px; /* İstediğiniz yüksekliği belirleyin */
+        object-fit: cover;
+    }
+</style>
+

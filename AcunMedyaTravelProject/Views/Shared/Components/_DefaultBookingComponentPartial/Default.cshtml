@@ -1,0 +1,67 @@
+﻿@model Booking
+<div class="container-fluid booking py-5">
+    <div class="container py-5">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6">
+                <h5 class="section-booking-title pe-3">Rezervasyon</h5>
+                <h1 class="text-white mb-4">Online Rezervasyon</h1>
+                <p class="text-white mb-4">
+                    Yandaki formu doldurarak online rezervasyon yapabilirsiniz. Rezervasyon işleminiz tamamlandıktan sonra, e-posta adresinize bir onay e-postası gönderilecektir. Bu e-posta, seyahatinizle ilgili tüm bilgileri içerecektir. Seyahatinizden önceki gün, bir hatırlatma e-postası alacaksınız. Seyahatiniz sırasında herhangi bir sorunuz olursa, müşteri hizmetlerimizle iletişime geçmekten çekinmeyin. Seyahatiniz için sabırsızlanıyoruz!
+                </p>
+               
+                <a href="#" class="btn btn-light text-primary rounded-pill py-3 px-5 mt-2">Daha Fazla</a>
+            </div>
+            <div class="col-lg-6">
+                <h1 class="text-white mb-3">Bir tura kaydolun</h1>
+                <p class="text-white mb-4">İlk seyahatinizde %30'a varan indirimleri kaçırmayın.</p>
+                <form method="post" asp-controller="Default" asp-action="MakeBooking">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input asp-for="Name" type="text" class="form-control bg-white border-0" id="name" placeholder="Ad Soyad">
+                                <label for="name">Ad Soyad</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input asp-for="Email" type="email" class="form-control bg-white border-0" id="email" placeholder="Mail Adresi">
+                                <label for="email">Mail Adresi</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating date" id="date3" data-target-input="nearest">
+                                <input asp-for="Date" type="datetime-local" class="form-control bg-white border-0" id="datetime" placeholder="Tarih" data-target="#date3" data-toggle="datetimepicker" />
+                                <label for="datetime">Tarih</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating" id="phone" data-target-input="nearest">
+                                <input asp-for="Phone" type="text" class="form-control bg-white border-0" id="phonen" placeholder="Telefon Numarası" data-target="#phone" />
+                                <label for="phonen">Telefon Numarası</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-floating">
+
+                                @Html.DropDownListFor(x => x.PackageId, (SelectList)ViewBag.Packages, "Paket seçin", new {@class="form-select bg-white border-0"})
+                                <label for="select1">Lokasyon</label>
+                            </div>
+                        </div>
+
+
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea asp-for="Note" class="form-control bg-white border-0" placeholder="Special Request" id="message" style="height: 100px"></textarea>
+                                <label for="message">Not</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary text-white w-100 py-3" type="submit">Rezervasyonu tamamla</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

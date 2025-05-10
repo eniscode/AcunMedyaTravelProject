@@ -1,0 +1,25 @@
+﻿@model AcunMedyaTravelProject.Entities.Destination
+
+@{
+    ViewData["Title"] = "Şehri Düzenle";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h1>Şehri Düzenle</h1>
+
+<form action="/Admin/Destination/Edit" method="post">
+    <input type="hidden" name="Id" value="@Model.Id" />
+
+    <div class="form-group">
+        <label for="CityName">Şehir Adı</label>
+        <input type="text" id="CityName" name="CityName" class="form-control" value="@Model.CityName" required />
+    </div>
+
+    <div class="form-group">
+        <label for="CoverImageUrl">Kapak Görseli URL</label>
+        <input type="text" id="CoverImageUrl" name="CoverImageUrl" class="form-control" value="@Model.CoverImageUrl" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+    <a href="/Admin/Destination/Index" class="btn btn-secondary">Geri Dön</a>
+</form>

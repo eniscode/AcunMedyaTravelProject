@@ -1,0 +1,12 @@
+﻿﻿<div class="container-fluid destination py-5">
+    <div class="container py-5">
+        <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+            <h5 class="section-title px-3">Lokasyonlar</h5>
+            <h1 class="mb-0">En Sık Gidilen Yerler</h1>
+        </div>
+        <div class="tab-class text-center">
+            @await Component.InvokeAsync("_DestinationCountryComponentPartial")
+            @await Component.InvokeAsync("_DestinationCityComponentPartial")
+        </div>
+    </div>
+</div>

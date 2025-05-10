@@ -1,0 +1,34 @@
+﻿@model LoginViewModel
+@{
+    ViewData["Title"] = "Admin Paneline Giriş";
+}
+
+<div class="d-flex justify-content-center align-items-center vh-100"
+     style="background: url('https://cdn.wallpapersafari.com/1/72/xBKoj4.jpg') no-repeat center center/cover;">
+    <div class="card shadow-lg" style="width: 400px; border-radius: 15px; background-color: rgba(255, 255, 255, 0.9);">
+        <div class="card-body">
+            <h3 class="card-title text-center mb-4" style="color: #6a11cb;">Admin Paneline Giriş</h3>
+            <form method="post">
+                <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+                <div class="form-group mb-3">
+                    <label for="Username" class="form-label" style="color: #333;">Kullanıcı Adı</label>
+                    <input asp-for="Username" class="form-control" id="Username" placeholder="Kullanıcı adınızı girin" style="border-radius: 10px;" />
+                    <span asp-validation-for="Username" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="Password" class="form-label" style="color: #333;">Şifre</label>
+                    <input asp-for="Password" type="password" class="form-control" id="Password" placeholder="Şifrenizi girin" style="border-radius: 10px;" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <button class="btn btn-primary w-100" type="submit" style="background-color: #6a11cb; border: none; border-radius: 10px;">Giriş Yap</button>
+            </form>
+        </div>
+        <div class="card-footer text-center" style="background-color: #f8f9fa; border-top: none; border-radius: 0 0 15px 15px;">
+            <small class="text-muted">Hesabınız yok mu? <a href="/Register" style="color: #6a11cb;">Kayıt Ol</a></small>
+        </div>
+    </div>
+</div>
+

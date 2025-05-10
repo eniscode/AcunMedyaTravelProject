@@ -1,0 +1,66 @@
+﻿@model (List<Destination>,List<Country>)
+@{
+    int counter = 0;
+}
+<style>
+    .destination-img img {
+        width: 100%;
+        height: 200px; /* İstediğiniz yüksekliği belirleyin */
+        object-fit: cover;
+    }
+</style>
+<div class="tab-content">
+    <div id="tab-All" class="tab-pane fade show p-0 active">
+        <div class="row g-4">
+            <div class="col-xl-12">
+                <div class="row g-4">
+                    @foreach (var destination in Model.Item1)
+                    {
+                        <div class="col-lg-4 col-md-6">
+                            <div class="destination-img">
+                                <img class="img-fluid rounded w-100" src="@destination.CoverImageUrl" alt="">
+                                <div class="destination-overlay p-4">
+                                    <h4 class="text-white mb-2 mt-3">@destination.CityName</h4>
+                                    <a href="#" class="btn-hover text-white">Tüm şehirleri göster <i class="fa fa-arrow-right ms-2"></i></a>
+                                </div>
+                                <div class="search-icon">
+                                    <a href="@destination.CoverImageUrl" data-lightbox="destination-1"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    @foreach (var item in Model.Item2)
+    {
+        <div id="tab-@item.Id" class="tab-pane fade show p-0">
+            <div class="row g-4">
+                @{
+                    var destinationsOfCountry = Model.Item1.Where(x => x.CountryId == item.Id).ToList();
+                }
+                <div class="col-xl-12">
+                    <div class="row g-4">
+                        @foreach (var destination in destinationsOfCountry)
+                        {
+                            <div class="col-lg-4 col-md-6">
+                                <div class="destination-img">
+                                    <img class="img-fluid rounded w-100" src="@destination.CoverImageUrl" alt="">
+                                    <div class="destination-overlay p-4">
+                                        <h4 class="text-white mb-2 mt-3">@destination.CityName</h4>
+                                        <a href="#" class="btn-hover text-white">Tüm şehirleri göster <i class="fa fa-arrow-right ms-2"></i></a>
+                                    </div>
+                                    <div class="search-icon">
+                                        <a href="@destination.CoverImageUrl" data-lightbox="destination-1"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        counter++;
+    }
+</div>
