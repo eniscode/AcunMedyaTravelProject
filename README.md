@@ -57,21 +57,18 @@ Bu proje, **ASP.NET Core MVC** ve **Entity Framework Core Code First** kullanıl
 ---
 
 ## 🖼️ Ekran Görüntüleri
-![image]([https://github.com/eniscode/AcunMedyaHospitalProject/blob/main/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-03-02%20031802.png](https://github.com/eniscode/AcunMedyaHospitalProject/blob/main/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-03-02%20031802.png))
-
-
-
-
-
-
-
+![image](https://github.com/eniscode/AcunMedyaTravelProject/blob/master/AcunMedyaTravelProject/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-05-10%20180423.png?raw=true))
+![image]())
+![image]())
+![image]())
+![image]())
+![image]())
+![image]())
+![image]())
+![image]())
+![image]())
+![image]())
+![image]())
+![image]())
 ---
 
-## ⚙️ Kurulum Adımları
-
-Aşağıdaki adımları takip ederek projeyi kendi bilgisayarınızda çalıştırabilirsiniz:
-
-1. **Projeyi klonlayın**
-   ```bash
-   git clone https://github.com/kullaniciadi/travel-project.git
-   cd travel-project
